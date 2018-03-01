@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner轮播</title>
+    <style>
+        *{
+            border-sizing: border-box;
+        }
+        body{
+            width: 1200px;
+            margin:200px auto;
+        }
+        #slider-box{
+            width: 100%;
+            position: relative;
+        }
+        #slider{
+            width: 100%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        #slider div{
+            width: 100%;
+            height: 600px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: #ffffff;
+            align-items: center;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        .active{
+            z-index: auto!important;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 542px;
+            left: 50%;
+            transform: translate(-50%);
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #dddddd;
+            margin:0 5px;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color: #9acfea;
+        }
+        li.active{
+            background-color: #9acfea;
+        }
+        .button{
+            width: 30px!important;
+            height: 30px!important;
+            margin: 0;
+            padding: 0;
+            border-top:5px solid #dddddd;
+            z-index: auto!important;
+            cursor: pointer;
+            background-color: transparent;
+            border-bottom: none;
+        }
+        .button:hover{
+            border-color: #2aabd2;
+        }
+        .arrow-prev{
+            border-left:5px solid #dddddd;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            left: 45px;
+            transform: rotate(-45deg);
+        }
+        .arrow-next{
+            border-right:5px solid #dddddd;
+            border-left: none;
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div id="slider-box">
+    <div id="slider">
+        <div class="active" data-num="0">slide1</div>
+        <div data-num="1">slide2</div>
+        <div data-num="2">slide3</div>
+        <div data-num="3">slide4</div>
+        <div data-num="4">slide5</div>
+    </div>
+    <!--按钮-->
+    <ul class="pagination">
+        <li class="active" data-li="0"></li>
+        <li data-li="1"></li>
+        <li data-li="2"></li>
+        <li data-li="3"></li>
+        <li data-li="4"></li>
+    </ul>
+    <!--按键-->
+    <div id="btn-prev" class="button arrow-prev"></div>
+    <div id="btn-next" class="button arrow-next"></div>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-plugin.js"></script>
+<script>
+    //调用轮播广告插件函数
+    $("#slider").carouselButton();
+</script>
+</body>
+</html>
