@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动监听</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #333333;
+        }
+        .affix{
+            position: fixed;
+            top: 6px;
+            right: -800px;
+            display: none;
+        }
+        ul{
+            list-style: none;
+            width: 50px;
+            border-top:1px solid #dddddd;
+            border-left:1px solid #dddddd;
+            border-right:1px solid #dddddd;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #dddddd;
+            font-size: 15px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        .active{
+            background-color: #333333;
+        }
+        .active a{
+            color: #ffffff;
+        }
+        div{
+            width: 100%;
+            height: 949px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-weight:bold;
+            font-size: 72px;
+        }
+        .floor-1{
+            background-color: #1b6d85;
+        }
+        .floor-2{
+            background-color: #8a6d3b;
+        }
+        .floor-3{
+            background-color: #a94442;
+        }
+        .floor-4{
+            background-color: #f0ad4e;
+        }
+        .floor-5{
+            background-color: #3e8f3e;
+        }
+    </style>
+</head>
+<body>
+    <div id="1" class="floor-1">一层</div>
+    <div id="2" class="floor-2">二层</div>
+    <div id="3" class="floor-3">三层</div>
+    <div id="4" class="floor-4">四层</div>
+    <div id="5" class="floor-5">五层</div>
+    <!--附加导航-->
+    <div class="affix">
+        <ul>
+            <li class="active"><a href="#1">一层</a></li>
+            <li><a href="#2">二层</a></li>
+            <li><a href="#3">三层</a></li>
+            <li><a href="#4">四层</a></li>
+            <li><a href="#5">五层</a></li>
+        </ul>
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery-plugin.js"></script>
+    <script>
+        //调用滚动监听插件
+        $(window).scrollSpy({
+            target: "div.affix" //指定要操作的附加导航
+        });
+    </script>
+</body>
+</html>
