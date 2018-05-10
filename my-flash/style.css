@@ -1,0 +1,19 @@
+/*快闪动画*/
+@keyframes countDown {
+    from {transform: translateZ(200px)}
+    to {transform: translateZ(-200px)}
+}
+
+#myFlash{
+    perspective: 200px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#myFlash p{
+    font-size: 100px;
+    transform: translateZ(200px);
+    position: absolute;
+    top: 42%;
+    left: 47%;
+}
